@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1706.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QrCodeApp.Mobile", "QrCodeApp.Mobile\QrCodeApp.Mobile.csproj", "{232FF8A2-B45B-442D-828A-F68B2CF04512}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QrCodeApp.Api", "QrCodeApp.Api\QrCodeApp.Api.csproj", "{BEA9EAE3-33DB-4ADF-A887-3346BBE0ADA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QRCodeApp.Shared", "QRCodeApp.Shared\QRCodeApp.Shared.csproj", "{5ACC6D7E-C719-4008-8AD5-215CAAF5C663}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{232FF8A2-B45B-442D-828A-F68B2CF04512}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{232FF8A2-B45B-442D-828A-F68B2CF04512}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{232FF8A2-B45B-442D-828A-F68B2CF04512}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{232FF8A2-B45B-442D-828A-F68B2CF04512}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEA9EAE3-33DB-4ADF-A887-3346BBE0ADA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEA9EAE3-33DB-4ADF-A887-3346BBE0ADA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEA9EAE3-33DB-4ADF-A887-3346BBE0ADA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEA9EAE3-33DB-4ADF-A887-3346BBE0ADA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5ACC6D7E-C719-4008-8AD5-215CAAF5C663}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ACC6D7E-C719-4008-8AD5-215CAAF5C663}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ACC6D7E-C719-4008-8AD5-215CAAF5C663}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ACC6D7E-C719-4008-8AD5-215CAAF5C663}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {93D26A4B-B16C-4E5D-A96C-94D90FACA879}
+	EndGlobalSection
+EndGlobal
