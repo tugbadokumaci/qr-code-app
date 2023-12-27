@@ -9,8 +9,8 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-        //MainPage = new AppShell();
-        MainPage = new CardPage(new CardViewModel(new Services.CardService()));
+        MainPage = new AppShell();
+        //MainPage = new CardPage(new CardViewModel(new Services.CardService()));
 
     }
 }

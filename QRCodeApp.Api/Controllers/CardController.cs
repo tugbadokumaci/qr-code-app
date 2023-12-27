@@ -92,7 +92,14 @@ namespace QrCodeApp.Api.Controllers
                     return NotFound("Card not found.");
 
                 existingCard.CardTitle = updatedCard.CardTitle;
-                existingCard.CardDescription = updatedCard.CardDescription;
+                existingCard.JobTitle = updatedCard.JobTitle;
+                existingCard.Phone = updatedCard.Phone;
+                existingCard.Mail = updatedCard.Mail;
+                existingCard.WebsiteUrl = updatedCard.WebsiteUrl;
+                existingCard.Address = updatedCard.Address;
+                existingCard.WebsiteUrl = updatedCard.WebsiteUrl;
+                existingCard.CreationDate = updatedCard.CreationDate;
+                existingCard.IsActive = updatedCard.IsActive;
 
                 _dbContext.SaveChanges();
 
