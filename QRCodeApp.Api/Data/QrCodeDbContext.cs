@@ -1,10 +1,12 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using QrCodeApp.Shared.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace QrCodeApp.Api.Data
 {
-    public class MyDbContext : DbContext
+    public class MyDbContext : IdentityUserContext<IdentityUser>
     {
         public MyDbContext(DbContextOptions<MyDbContext> options) : base(options)
         {
@@ -21,6 +23,12 @@ namespace QrCodeApp.Api.Data
         //        .HasForeignKey(c => c.CardOwnerId)
         //        .OnDelete(DeleteBehavior.Cascade);
         //}
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            // ...
+        }
     }
 
 }
