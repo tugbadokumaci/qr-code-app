@@ -1,21 +1,20 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using QRCodeApp.Shared.Models.Common;
 
 namespace QrCodeApp.Shared.Models
 {
-	public class CardModel
+	public class CardModel : BaseModel
 	{
 		[Key]
-		public int CardId { get; set; }
-		public int CreatorId { get; set; }
-        public String CardTitle{ get; set; }
-		public String JobTitle{ get; set; }
-		public String Phone{ get; set; }
-		public String Mail{ get; set; }
-		public String WebsiteUrl{ get; set; }
-		public String Address{ get; set; }
-		public DateTime CreationDate { get; set; }
-		public bool IsActive { get; set; }
+        public int Id { get; set; }
+        public int CreatorId { get; set; }
+        public string DisplayName { get; set; } = string.Empty;
+        public string JobTitle { get; set; } = string.Empty;
+        public string Phone { get; set; } = string.Empty;
+        public string Mail { get; set; } = string.Empty;
+        public string WebsiteUrl { get; set; } = string.Empty;
+        public string Address { get; set; } = string.Empty;
 
 
     }

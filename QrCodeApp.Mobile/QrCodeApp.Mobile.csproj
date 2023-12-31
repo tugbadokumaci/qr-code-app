@@ -56,19 +56,45 @@
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 		<PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="6.1.0" />
+		<PackageReference Include="Camera.MAUI" Version="1.4.4" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <None Remove="Services\" />
 	  <None Remove="Views\" />
 	  <None Remove="ViewModels\" />
+	  <None Remove="Component\" />
+	  <None Remove="ViewModels\Common\" />
+	  <None Remove="Resources\Images\user %281%29.png" />
+	  <None Remove="Resources\Images\share.png" />
+	  <None Remove="Resources\Images\left-arrow.png" />
+	  <None Remove="Resources\Images\home.png" />
+	  <None Remove="Resources\Images\home %281%29.png" />
+	  <None Remove="Resources\Images\save-instagram.png" />
+	  <None Remove="Resources\Images\bookmark.png" />
+	  <None Remove="Converters\" />
+	  <None Remove="Resources\Images\OCR.png" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Services\" />
 	  <Folder Include="Views\" />
 	  <Folder Include="ViewModels\" />
+	  <Folder Include="Component\" />
+	  <Folder Include="ViewModels\Common\" />
+	  <Folder Include="Converters\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <ProjectReference Include="..\QRCodeApp.Shared\QRCodeApp.Shared.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+	  <BundleResource Include="Resources\Images\user.png" />
+	  <BundleResource Include="Resources\Images\share.png" />
+	  <BundleResource Include="Resources\Images\back.png" />
+	  <BundleResource Include="Resources\Images\home_full.png" />
+	  <BundleResource Include="Resources\Images\home.png" />
+	  <BundleResource Include="Resources\Images\saved.png" />
+	  <BundleResource Include="Resources\Images\saved_full.png" />
+	  <BundleResource Include="Resources\Images\scan.png" />
 	</ItemGroup>
 </Project>

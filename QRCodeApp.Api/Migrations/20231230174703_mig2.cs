@@ -5,7 +5,7 @@
 namespace QRCodeApp.Api.Migrations
 {
     /// <inheritdoc />
-    public partial class mig3 : Migration
+    public partial class mig2 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

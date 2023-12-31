@@ -12,8 +12,9 @@ namespace QrCodeApp.Api.Data
         {
         }
 
-        public DbSet<UserModel> Users { get; set; }
-        public DbSet<CardModel> Cards { get; set; }
+
+        public override DbSet<IdentityUser> Users => base.Users;
+        public DbSet<CardModel> Cards => Set<CardModel>();
 
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
         //{

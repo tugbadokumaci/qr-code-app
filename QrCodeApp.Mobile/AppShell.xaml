@@ -3,13 +3,29 @@
     x:Class="QrCodeApp.Mobile.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:QrCodeApp.Mobile"
-    Shell.FlyoutBehavior="Disabled">
+    xmlns:local="clr-namespace:QrCodeApp.Mobile.Views"
+    Shell.FlyoutBehavior="Disabled"
+
+    BackgroundColor="Transparent">
+
 
     <ShellContent
         Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        ContentTemplate="{DataTemplate local:HomeView}"
+        Route="HomeView" />
+    <TabBar>
+        <Tab>
+            <ShellContent Title="Home" ContentTemplate="{DataTemplate local:HomeView}"
+                Icon="home.png" Route="HomeView"/>
 
+            <ShellContent Title="Scan" ContentTemplate="{DataTemplate local:ScanView}"
+                            Icon="scan.png" Route="ScanView"/>
+
+            <ShellContent Title="Saved" ContentTemplate="{DataTemplate local:SavedView}"
+                            Icon="save.png" Route="SavedView"/>
+
+        </Tab>
+
+    </TabBar>
 </Shell>
 

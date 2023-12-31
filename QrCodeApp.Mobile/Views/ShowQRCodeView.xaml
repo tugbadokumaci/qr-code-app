@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cv="clr-namespace:Camera.MAUI;assembly=Camera.MAUI"
+             x:Class="QrCodeApp.Mobile.Views.ShowQRCodeView"
+             xmlns:viewmodels="clr-namespace:QrCodeApp.Mobile.ViewModels"
+             xmlns:views="clr-namespace:QrCodeApp.Mobile.Views"
+          
+             BackgroundColor="#EFF0F4"
+             Title="ShowQRCodeView">
+
+
+    <VerticalStackLayout>
+        <Frame BackgroundColor="White" CornerRadius="10" Margin="20" BorderColor="White">
+           <VerticalStackLayout VerticalOptions="Center">
+                <Frame BackgroundColor="White" CornerRadius="10" Margin="20" BorderColor="White">
+                    <VerticalStackLayout Spacing="5" HorizontalOptions="Center">
+                        <Image Source="user.png" WidthRequest="40" HeightRequest="40"/>
+                        <Label Text="{Binding Model.DisplayName}" FontSize="20" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                        <cv:BarcodeImage BarcodeMargin="5" WidthRequest="250" HeightRequest="250" BarcodeHeight="250" BarcodeWidth="250"
+                            BarcodeBackground="White" BarcodeForeground="Black" BarcodeFormat="QR_CODE" Barcode="{Binding Model.Id}"/>
+                        <Label Text="To share the contact, ask your friend to scan the code." FontSize="15" FontAttributes="Bold" TextColor="#92919E" VerticalOptions="CenterAndExpand"/>
+                    </VerticalStackLayout>
+                </Frame>
+            </VerticalStackLayout>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>

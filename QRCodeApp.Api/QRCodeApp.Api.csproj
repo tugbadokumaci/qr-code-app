@@ -29,17 +29,29 @@
 
   <ItemGroup>
     <None Remove="Data\" />
-    <None Remove="ResourceModels\" />
     <None Remove="Services\" />
+    <None Remove="Repositories\" />
+    <None Remove="Repositories\Abstract\" />
+    <None Remove="Repositories\Concrete\" />
+    <None Remove="Repositories\Abstract\Common\" />
+    <None Remove="Repositories\Concrete\Common\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
-    <Folder Include="ResourceModels\" />
     <Folder Include="Services\" />
+    <Folder Include="Repositories\" />
+    <Folder Include="Repositories\Abstract\" />
+    <Folder Include="Repositories\Concrete\" />
+    <Folder Include="Repositories\Abstract\Common\" />
+    <Folder Include="Repositories\Concrete\Common\" />
+    <Folder Include="wwwroot\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\QRCodeApp.Shared\QRCodeApp.Shared.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\" />
   </ItemGroup>
 </Project>

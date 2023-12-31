@@ -33,7 +33,7 @@ namespace QrCodeApp.Api.Controllers
             }
         }
 
-        [HttpGet("getUserCards/{userId}")]
+        [HttpGet("getUserCards/{Id}")]
         public IActionResult GetUserCards(int userId)
         {
             try
@@ -47,12 +47,12 @@ namespace QrCodeApp.Api.Controllers
             }
         }
 
-        [HttpGet("getCardDetails/{cardId}")]
-        public IActionResult GetCardDetails(int userId, int cardId)
+        [HttpGet("getCardDetails/{Id}")]
+        public IActionResult GetCardDetails( int Id)
         {
             try
             {
-                var card = _dbContext.Cards.FirstOrDefault(c => c.CardId == cardId && c.CreatorId == userId);
+                var card = _dbContext.Cards.FirstOrDefault(c => c.Id == Id);
 
                 if (card == null)
                     return NotFound("Card not found.");
@@ -73,7 +73,7 @@ namespace QrCodeApp.Api.Controllers
                 newCard.CreatorId = userId;
                 _dbContext.Cards.Add(newCard);
                 _dbContext.SaveChanges();
-                return CreatedAtAction(nameof(GetCardDetails), new { userId, cardId = newCard.CardId }, newCard);
+                return CreatedAtAction(nameof(GetCardDetails), new { userId, Id = newCard.Id }, newCard);
             }
             catch (Exception ex)
             {
@@ -81,24 +81,24 @@ namespace QrCodeApp.Api.Controllers
             }
         }
 
-        [HttpPut("updateCard/{cardId}")]
-        public IActionResult UpdateCard(int userId, int cardId, [FromBody] CardModel updatedCard)
+        [HttpPut("updateCard/{Id}")]
+        public IActionResult UpdateCard(int userId, int Id, [FromBody] CardModel updatedCard)
         {
             try
             {
-                var existingCard = _dbContext.Cards.FirstOrDefault(c => c.CardId == cardId && c.CreatorId == userId);
+                var existingCard = _dbContext.Cards.FirstOrDefault(c => c.Id == Id && c.CreatorId == userId);
 
                 if (existingCard == null)
                     return NotFound("Card not found.");
 
-                existingCard.CardTitle = updatedCard.CardTitle;
+                existingCard.DisplayName = updatedCard.DisplayName;
                 existingCard.JobTitle = updatedCard.JobTitle;
                 existingCard.Phone = updatedCard.Phone;
                 existingCard.Mail = updatedCard.Mail;
                 existingCard.WebsiteUrl = updatedCard.WebsiteUrl;
                 existingCard.Address = updatedCard.Address;
                 existingCard.WebsiteUrl = updatedCard.WebsiteUrl;
-                existingCard.CreationDate = updatedCard.CreationDate;
+                existingCard.CreatedDate = updatedCard.CreatedDate;
                 existingCard.IsActive = updatedCard.IsActive;
 
                 _dbContext.SaveChanges();
@@ -111,12 +111,12 @@ namespace QrCodeApp.Api.Controllers
             }
         }
 
-        [HttpDelete("deleteCard/{cardId}")]
-        public IActionResult DeleteCard(int userId, int cardId)
+        [HttpDelete("deleteCard/{Id}")]
+        public IActionResult DeleteCard(int userId, int Id)
         {
             try
             {
-                var cardToDelete = _dbContext.Cards.FirstOrDefault(c => c.CardId == cardId && c.CreatorId == userId);
+                var cardToDelete = _dbContext.Cards.FirstOrDefault(c => c.Id == Id && c.CreatorId == userId);
 
                 if (cardToDelete == null)
                     return NotFound("Card not found.");
@@ -124,7 +124,7 @@ namespace QrCodeApp.Api.Controllers
                 _dbContext.Cards.Remove(cardToDelete);
                 _dbContext.SaveChanges();
 
-                return Ok($"Card with ID {cardId} has been deleted.");
+                return Ok($"Card with ID {Id} has been deleted.");
             }
             catch (Exception ex)
             {

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QrCodeApp.Mobile.Views.DetailCardView"
+             xmlns:viewmodels="clr-namespace:QrCodeApp.Mobile.ViewModels"
+             xmlns:converters="clr-namespace:QrCodeApp.Mobile.Converters"
+
+             BackgroundColor="#EFF0F4"
+             Title="Card Detail">
+
+
+    <ContentPage.Resources>
+    <ResourceDictionary>
+        <converters:BoolToTextConverter x:Key="BoolToTextConverter" />
+    </ResourceDictionary>
+</ContentPage.Resources>
+
+
+<ScrollView>
+            <VerticalStackLayout>
+        <Label 
+            Text="Card Detail"
+            VerticalOptions="Start" 
+            HorizontalOptions="Center" TextColor="#322F40" FontSize="20" Margin="0,20,0,20" FontAttributes="Bold"/>
+        <VerticalStackLayout HorizontalOptions="Center" Spacing="10">
+            <Image Source="user.png" WidthRequest="40" HeightRequest="40"/>
+            <Label Text="{Binding JobTitle}" FontSize="18" FontAttributes="Bold" TextColor="#5E5B67" VerticalOptions="CenterAndExpand"/>
+        </VerticalStackLayout >
+
+        <HorizontalStackLayout HorizontalOptions="Center" Margin="0,20,0,20" Spacing="10" >
+            <Button Text="Show QR" TextColor="Black" BackgroundColor="White" CornerRadius="10"  FontAttributes="Bold"/>
+                <Button Text="{Binding IsEditMode, Converter={StaticResource BoolToTextConverter}, ConverterParameter='Edit|Save'}" TextColor="Black" BackgroundColor="White" CornerRadius="10" FontAttributes="Bold" Command="{Binding ToggleEditModeCommand}"/>
+            <Button Text="Delete" TextColor="#FF0000" BackgroundColor="#FFBEBE" CornerRadius="10" FontAttributes="Bold" Command="{Binding RemoveCommand}"/>
+        </HorizontalStackLayout>
+        <Frame BackgroundColor="White" CornerRadius="10" Margin="20" BorderColor="White">
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Phone" TextColor="#5E5B67" FontSize="15"/>
+                <Label Text="{Binding Phone}" TextColor="Black" FontAttributes="Bold" FontSize="20" IsEnabled="{Binding IsEditMode}"/>
+                <Label Text="Mail" TextColor="#5E5B67" FontSize="15"/>
+                <Label Text="{Binding Mail}" TextColor="Black" FontAttributes="Bold" FontSize="20" IsEnabled="{Binding IsEditMode}"/>
+
+                <Label Text="Website Url" TextColor="#5E5B67" FontSize="15"/>
+                <Label Text="{Binding WebsiteUrl}" TextColor="Black" FontAttributes="Bold" FontSize="20" IsEnabled="{Binding IsEditMode}"/>
+
+                <Label Text="Address" TextColor="#5E5B67" FontSize="15"/>
+                <Label Text="{Binding Address}" TextColor="Black" FontAttributes="Bold" FontSize="20" IsEnabled="{Binding IsEditMode}"/>
+            </VerticalStackLayout>
+        </Frame>
+
+        <Label Text="{Binding CreationDate, StringFormat='Created at {0:MMM d, yyyy} at {0:h:mm tt'}" FontSize="10" TextColor="#5E5B67"/>
+
+    </VerticalStackLayout>
+
+    </ScrollView>
+</ContentPage>
