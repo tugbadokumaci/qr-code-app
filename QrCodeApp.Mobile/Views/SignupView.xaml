@@ -3,10 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="QrCodeApp.Mobile.Views.SignupView"
              Title="SignupView">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+   <StackLayout Padding="20">
+        <Label Text="Signup" FontSize="Title" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+
+        <Entry x:Name = "Entry_Username" Placeholder="Username" Text="{Binding Username}" Margin="0,10,0,10" />
+        <Entry x:Name = "Entry_Email" Placeholder="Email" Text="{Binding Email}" Margin="0,10,0,10" />
+        <Entry x:Name = "Entry_Password" Placeholder="Password" Text="{Binding Password}" IsPassword="True" Margin="0,10,0,10" />
+
+        <Button Text="Sign up" Style="{StaticResource CustomButtonStyle}" Command="{Binding SignupCommand}" />
+        <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+
+            <Label Text="Already have an account? Log in" TextDecorations="Underline" TextColor="#C31C4B" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding GotoLoginPageCommand}" />
+                </Label.GestureRecognizers> 
+            </Label>
+            <Image Source="right_red_arrow.png" WidthRequest="20" HeightRequest="20"/>
+
+        </HorizontalStackLayout>
+    </StackLayout>
 </ContentPage>

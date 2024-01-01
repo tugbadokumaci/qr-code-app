@@ -5,6 +5,9 @@ using QrCodeApp.Shared.Models;
 
 public class ShowQRCodeViewModel : ObservableObject
 {
+    public static int Id { get; set; }
+
+
     private CardModel _model;
 
     public CardModel Model
@@ -15,10 +18,10 @@ public class ShowQRCodeViewModel : ObservableObject
 
     public ShowQRCodeViewModel()
     {
-        GetModelDetails(1);
+        GetModelDetails();
     }
 
-    private async void GetModelDetails(int Id)
+    private async void GetModelDetails()
     {
         HttpClient httpClient = new HttpClient();
 

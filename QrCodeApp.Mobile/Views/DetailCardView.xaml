@@ -28,7 +28,7 @@
         </VerticalStackLayout >
 
         <HorizontalStackLayout HorizontalOptions="Center" Margin="0,20,0,20" Spacing="10" >
-            <Button Text="Show QR" TextColor="Black" BackgroundColor="White" CornerRadius="10"  FontAttributes="Bold"/>
+            <Button Text="Show QR" TextColor="Black" BackgroundColor="White" CornerRadius="10"  FontAttributes="Bold" Command="{Binding GotoShowQRCardPageCommand}"/>
                 <Button Text="{Binding IsEditMode, Converter={StaticResource BoolToTextConverter}, ConverterParameter='Edit|Save'}" TextColor="Black" BackgroundColor="White" CornerRadius="10" FontAttributes="Bold" Command="{Binding ToggleEditModeCommand}"/>
             <Button Text="Delete" TextColor="#FF0000" BackgroundColor="#FFBEBE" CornerRadius="10" FontAttributes="Bold" Command="{Binding RemoveCommand}"/>
         </HorizontalStackLayout>

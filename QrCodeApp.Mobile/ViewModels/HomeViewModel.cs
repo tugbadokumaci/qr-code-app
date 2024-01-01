@@ -53,7 +53,7 @@ namespace QrCodeApp.Mobile.ViewModels
             //try
             //{
             DetailCardViewModel.Id = id;
-            await Shell.Current.GoToAsync($"//{nameof(AddCardView)}");
+            await Application.Current.MainPage.Navigation.PushAsync(new DetailCardView(new DetailCardViewModel()));
             //await Shell.Current.GoToAsync("DetailCardView");
             //}
             //catch(Exception ex)

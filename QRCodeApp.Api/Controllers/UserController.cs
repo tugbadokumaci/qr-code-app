@@ -95,5 +95,51 @@ namespace QrCodeApp.Api.Controllers
 
             return Ok(token);
         }
+
+        // POST: api/Users/Signup
+        [HttpPost("Signup")]
+        public async Task<ActionResult<AuthenticationResponse>> Signup(UserModel userModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var existingUser = await _userManager.FindByEmailAsync(userModel.Email);
+
+            if (existingUser != null)
+            {
+                return BadRequest("User with this email already exists");
+            }
+
+            var newUser = new IdentityUser
+            {
+                UserName = userModel.UserName,
+                Email = userModel.Email
+            };
+
+            var result = await _userManager.CreateAsync(newUser, userModel.PasswordHash);
+
+            if (!result.Succeeded)
+            {
+                return BadRequest(result.Errors);
+            }
+
+            var token = _jwtService.CreateToken(newUser);
+
+            if (token == null)
+            {
+                return BadRequest("Failed to create token");
+            }
+
+            var response = new AuthenticationResponse
+            {
+                Token = token,
+                Expiration = DateTime.Now.AddDays(7), // Set an appropriate expiration date
+                Username = newUser.UserName
+            };
+
+            return Ok(response);
+        }
     }
 }

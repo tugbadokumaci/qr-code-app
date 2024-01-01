@@ -75,6 +75,7 @@
 	  <None Remove="Resources\Images\bookmark.png" />
 	  <None Remove="Converters\" />
 	  <None Remove="Resources\Images\OCR.png" />
+	  <None Remove="Resources\Images\tabler_arrow-up.png" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Services\" />
@@ -96,5 +97,6 @@
 	  <BundleResource Include="Resources\Images\saved.png" />
 	  <BundleResource Include="Resources\Images\saved_full.png" />
 	  <BundleResource Include="Resources\Images\scan.png" />
+	  <BundleResource Include="Resources\Images\right_red_arrow.png" />
 	</ItemGroup>
 </Project>

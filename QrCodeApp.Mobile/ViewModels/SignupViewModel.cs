@@ -8,6 +8,7 @@ using QrCodeApp.Mobile.ViewModels.Common;
 using QrCodeApp.Shared.Models;
 using System.Text;
 using CommunityToolkit.Maui.Core;
+using QrCodeApp.Mobile.Views;
 
 namespace QrCodeApp.Mobile.ViewModels
 {
@@ -32,10 +33,10 @@ namespace QrCodeApp.Mobile.ViewModels
 
             UserModel model = new()
             {
-                UserName = UserName,
-                UserSurname = UserSurname,
-                Email = Email,
-                PasswordHash = PasswordHash,
+                UserName = _userName,
+                UserSurname = _userSurname,
+                Email = _email,
+                PasswordHash = _passwordHash,
             };
 
             try
@@ -52,7 +53,7 @@ namespace QrCodeApp.Mobile.ViewModels
                 var stringContent = new StringContent(json, Encoding.UTF8, "application/json");
                 httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                var response = await httpClient.PostAsync($"{App.BaseUrl}/PostUser", stringContent);
+                var response = await httpClient.PostAsync($"{App.BaseUrl}/Signup", stringContent);
 
                 if (response != null && response.IsSuccessStatusCode)
                 {
@@ -71,11 +72,17 @@ namespace QrCodeApp.Mobile.ViewModels
 
             SemanticScreenReader.Announce(message);
             await CommunityToolkit.Maui.Alerts.Toast.Make(message, ToastDuration.Long, 16).Show(new CancellationTokenSource().Token);
+            await Application.Current.MainPage.Navigation.PushAsync(new HomeView(new HomeViewModel()));
 
             // Use navigation service to navigate to the main page if needed.
             // App.Current.MainPage = new AppShell();
         }
 
-        // ColorSelected metodu ViewModel içinde kullanılmıyor, bu nedenle kaldırıldı.
+        [RelayCommand]
+        public async Task GotoLoginPage()
+        {
+            await Application.Current.MainPage.Navigation.PushAsync(new LoginView(new LoginViewModel()));
+        }
+
     }
 }

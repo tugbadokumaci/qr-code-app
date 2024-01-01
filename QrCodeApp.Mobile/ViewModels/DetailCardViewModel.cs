@@ -9,6 +9,7 @@ using static Android.Graphics.ColorSpace;
 using QrCodeApp.Shared.Models;
 using System.Text;
 using System.Threading.Tasks;
+using QrCodeApp.Mobile.Views;
 
 namespace QrCodeApp.Mobile.ViewModels;
 
@@ -48,22 +49,18 @@ public partial class DetailCardViewModel : ObservableObject
     [ObservableProperty]
     private CardModel _model;
 
-
+    [ObservableProperty]
     private bool _isEditMode;
-    public bool IsEditMode
-    {
-        get => _isEditMode;
-        set => SetProperty(ref _isEditMode, value);
-    }
+
 
     public DetailCardViewModel()
     {
 
-        GetModelDetails(1);
+        GetModelDetails();
 
     }
 
-    private async void GetModelDetails(int Id)
+    private async void GetModelDetails()
     {
         HttpClient httpClient = new HttpClient();
 
@@ -199,7 +196,25 @@ public partial class DetailCardViewModel : ObservableObject
     [RelayCommand]
     public void ToggleEditMode()
     {
-        IsEditMode = !IsEditMode;
+        _isEditMode = !_isEditMode;
     }
+
+    [RelayCommand]
+    public async Task GotoShowQRCardPage()
+    {
+        //try
+        //{
+        ShowQRCodeViewModel.Id = Id;
+        await Application.Current.MainPage.Navigation.PushAsync(new ShowQRCodeView(new ShowQRCodeViewModel()));
+        //await Shell.Current.GoToAsync("DetailCardView");
+        //}
+        //catch(Exception ex)
+        //{
+        //    int x = 5;
+
+        //}
+    }
+
+
 }
 

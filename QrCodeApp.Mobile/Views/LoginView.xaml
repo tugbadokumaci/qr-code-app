@@ -6,11 +6,22 @@
              Title="LoginView">
 
     <StackLayout Padding="20">
-        <Label Text="Signup" FontSize="Title" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+        <Label Text="Login" FontSize="Title" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
 
         <Entry x:Name = "Entry_Email" Placeholder="Email" Text="{Binding Email}" Margin="0,10,0,10" />
         <Entry x:Name = "Entry_Password" Placeholder="Password" Text="{Binding Password}" IsPassword="True" Margin="0,10,0,10" />
 
         <Button Text="Login" Style="{StaticResource CustomButtonStyle}" Command="{Binding LoginCommand}" />
+
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+
+            <Label Text="New here? Sign up" TextDecorations="Underline" TextColor="#C31C4B" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding GotoSignupPageCommand}" />
+                </Label.GestureRecognizers> 
+            </Label>
+            <Image Source="right_red_arrow.png" WidthRequest="20" HeightRequest="20"/>
+
+        </HorizontalStackLayout>
     </StackLayout>
 </ContentPage>

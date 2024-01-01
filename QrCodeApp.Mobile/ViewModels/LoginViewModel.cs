@@ -65,7 +65,7 @@ public partial class LoginViewModel : BaseViewModel
                     // Başarılı giriş durumu
                     //Content = "Successfully logged in";
                     //await _navigation.PushAsync(new HomeView(new HomeViewModel()));
-                    await Shell.Current.GoToAsync(nameof(HomeView));
+                    await Application.Current.MainPage.Navigation.PushAsync(new HomeView(new HomeViewModel()));
 
 
                 }
@@ -86,6 +86,12 @@ public partial class LoginViewModel : BaseViewModel
             // Handle exception
             //Content = ex.Message;
         }
+    }
+
+    [RelayCommand]
+    public async Task GotoSignupPage()
+    {
+        await Application.Current.MainPage.Navigation.PushAsync(new SignupView(new SignupViewModel()));
     }
 
 }
