@@ -10,10 +10,11 @@ using QrCodeApp.Shared.Models;
 using System.Text;
 using System.Threading.Tasks;
 using QrCodeApp.Mobile.Views;
+using System.ComponentModel;
 
 namespace QrCodeApp.Mobile.ViewModels;
 
-public partial class DetailCardViewModel : ObservableObject
+public partial class DetailCardViewModel : ObservableObject, INotifyPropertyChanged
 
 {
     public static int Id { get; set; }
@@ -41,16 +42,13 @@ public partial class DetailCardViewModel : ObservableObject
     private string _address;
 
     [ObservableProperty]
-    private DateTime _date; // creation date
-
-    [ObservableProperty]
-    private TimeSpan _time; // creation time
+    private DateTime _createdDate; // creation date
 
     [ObservableProperty]
     private CardModel _model;
 
     [ObservableProperty]
-    private bool _isEditMode;
+    private bool _isEditMode = true;
 
 
     public DetailCardViewModel()
@@ -80,8 +78,9 @@ public partial class DetailCardViewModel : ObservableObject
             Mail = Model.Mail;
             WebsiteUrl = Model.WebsiteUrl;
             Address = Model.Address;
-            Date = Model.CreatedDate.Date;
-            Time = Model.CreatedDate.TimeOfDay;
+            CreatedDate = Model.CreatedDate;
+            //Date = Model.CreatedDate.Date;
+            //Time = Model.CreatedDate.TimeOfDay;
 
         }
         else
@@ -101,7 +100,8 @@ public partial class DetailCardViewModel : ObservableObject
         Model.Mail = _mail;
         Model.WebsiteUrl = _websiteUrl;
         Model.Address = _address;
-        Model.CreatedDate = DateTime.Parse(_date.ToShortDateString() + " " + _time.ToString());
+        Model.CreatedDate = _createdDate;
+        //Model.CreatedDate = DateTime.Parse(_date.ToShortDateString() + " " + _time.ToString());
 
 
 
@@ -150,7 +150,7 @@ public partial class DetailCardViewModel : ObservableObject
         string message = string.Empty;
 
         Model.IsActive = false;
-        Model.UpdatedDate = DateTime.Parse(_date.ToShortDateString() + " " + _time.ToString());
+        Model.UpdatedDate = DateTime.Parse(_createdDate.ToString());
 
 
 
@@ -196,7 +196,7 @@ public partial class DetailCardViewModel : ObservableObject
     [RelayCommand]
     public void ToggleEditMode()
     {
-        _isEditMode = !_isEditMode;
+        IsEditMode = !IsEditMode;
     }
 
     [RelayCommand]

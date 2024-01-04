@@ -1,31 +1,74 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
-<Shell
-    x:Class="QrCodeApp.Mobile.AppShell"
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:QrCodeApp.Mobile.Views"
-    Shell.FlyoutBehavior="Disabled"
+﻿<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:QrCodeApp.Mobile.Views"
+       x:Class="QrCodeApp.Mobile.AppShell"
+       Shell.FlyoutBehavior="Disabled"
+       FlyoutBackgroundColor="red"
+       BackgroundColor="#1f456e">
 
-    BackgroundColor="Transparent">
+    <!--<Shell.Behaviors>
+             <mct: StatusBarBehavior StatusBarColor="{StaticResource DarkBack}" StatusBarStyle="LightContent" />
 
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:HomeView}"
-        Route="HomeView" />
-    <TabBar>
+    </Shell.Behaviors>-->
+
+       <!--<Shell.Resources>
+    <Style x:Key="BaseStyle" 
+           TargetType="Element">
+        <Setter Property="Shell.ShellBackgroundColor" 
+                Value="#455A64" />
+        <Setter Property="Shell.ShellForegroundColor" 
+                Value="White" />
+        <Setter Property="Shell.ShellTitleColor" 
+                Value="Red" />
+        <Setter Property="Shell.ShellDisabledColor" 
+                Value="#B4FFFFFF" />
+        <Setter Property="Shell.ShellUnselectedColor" 
+                Value="#95FFFFFF" />
+    </Style>
+
+</Shell.Resources>-->
+
+
+    <TabBar >
+
         <Tab>
-            <ShellContent Title="Home" ContentTemplate="{DataTemplate local:HomeView}"
-                Icon="home.png" Route="HomeView"/>
 
-            <ShellContent Title="Scan" ContentTemplate="{DataTemplate local:ScanView}"
-                            Icon="scan.png" Route="ScanView"/>
+            <ShellContent Title="Home"
 
-            <ShellContent Title="Saved" ContentTemplate="{DataTemplate local:SavedView}"
-                            Icon="save.png" Route="SavedView"/>
+                          Shell.TitleColor = "Purple"
+                          Shell.TabBarDisabledColor="IndianRed"
+                          Shell.TabBarBackgroundColor="Aqua"
+                          Shell.TabBarTitleColor="black"
+                          Shell.TabBarUnselectedColor="DarkCyan"
+                          Shell.TabBarForegroundColor="Gold"
+                          ContentTemplate="{DataTemplate local:HomeView}"
 
+                          Route="HomeView"  >
+                <ShellContent.Icon>
+                    <FileImageSource File="dotnet_bot.svg" />
+                </ShellContent.Icon>
+            </ShellContent>
+        </Tab>
+        <Tab>
+            <ShellContent Title="Scan"
+                          ContentTemplate="{DataTemplate local:ScanView}"
+                          Route="ScanView" Shell.TabBarTitleColor="#353f7b" Shell.TabBarUnselectedColor="Green" >
+                <ShellContent.Icon>
+                    <FileImageSource File="dotnet_bot.svg" />
+                </ShellContent.Icon>
+            </ShellContent>
+        </Tab>
+        <Tab>
+            <ShellContent Title="Saved"
+                          ContentTemplate="{DataTemplate local:SavedView}"
+                          Route="SavedView" Shell.TabBarTitleColor="#353f7b" Shell.TabBarUnselectedColor="Green" >
+                <ShellContent.Icon>
+                    <FileImageSource File="dotnet_bot.svg" />
+                </ShellContent.Icon>
+            </ShellContent>
         </Tab>
 
     </TabBar>
-</Shell>
 
+</Shell>

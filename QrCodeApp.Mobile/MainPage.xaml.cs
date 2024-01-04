@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Microsoft.Maui.Controls;
 
 namespace QrCodeApp.Mobile
 {
@@ -9,6 +10,7 @@ namespace QrCodeApp.Mobile
         public MainPage()
         {
             InitializeComponent();
+
         }
 
         private async void OnCounterClicked(object sender, EventArgs e)

@@ -14,6 +14,7 @@ public partial class AppShell : Shell
         Routing.RegisterRoute(nameof(ShowQRCodeView), typeof(ShowQRCodeView));
         Routing.RegisterRoute(nameof(AddCardView), typeof(AddCardView));
         Routing.RegisterRoute(nameof(ScanView), typeof(ScanView));
+
     }
 }
 

@@ -15,13 +15,12 @@ public partial class App : Application
 
         InitializeComponent();
 
-        //MainPage = new AppShell();
+        MainPage = new AppShell();
         //MainPage = new NavigationPage(new HomeView(new HomeViewModel()));
-        MainPage = new NavigationPage(new LoginView(new LoginViewModel()));
+        //MainPage = new NavigationPage(new LoginView(new LoginViewModel()));
         //MainPage = new NavigationPage(new DetailCardView(new DetailCardViewModel()));
         //MainPage = new NavigationPage(new ShowQRCodeView(new ShowQRCodeViewModel()));
         //MainPage = new AppShell();
     }
 }
-
 

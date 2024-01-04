@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Globalization;
 
-
 namespace QrCodeApp.Mobile.Converters
 {
     public class BoolToTextConverter : IValueConverter
@@ -19,7 +18,12 @@ namespace QrCodeApp.Mobile.Converters
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            throw new NotImplementedException();
+            if (value is string text && parameter is string parameterText)
+            {
+                return text.Equals(parameterText, StringComparison.OrdinalIgnoreCase);
+            }
+
+            return value;
         }
     }
 }

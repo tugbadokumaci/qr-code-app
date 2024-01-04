@@ -67,7 +67,6 @@ public partial class LoginViewModel : BaseViewModel
                     //await _navigation.PushAsync(new HomeView(new HomeViewModel()));
                     await Application.Current.MainPage.Navigation.PushAsync(new HomeView(new HomeViewModel()));
 
-
                 }
                 else
                 {
