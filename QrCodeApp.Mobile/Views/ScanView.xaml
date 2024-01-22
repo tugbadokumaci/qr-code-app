@@ -1,12 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cv="clr-namespace:Camera.MAUI;assembly=Camera.MAUI"
+             xmlns:viewmodels="clr-namespace:QrCodeApp.Mobile.ViewModels"
              x:Class="QrCodeApp.Mobile.Views.ScanView"
-             Title="ScanView">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+             BackgroundColor="#EFF0F4"
+            Shell.ForegroundColor="Transparent"
+             Title="Scan View">
+
+<Grid HorizontalOptions="Center" VerticalOptions="Center" RowDefinitions="Auto, *, Auto, Auto" Padding="20" >
+
+<Frame Grid.Row="0" BackgroundColor="White" BorderColor="White" WidthRequest="340" HeightRequest="420" CornerRadius="22" Margin="10,0,10,30">
+    <VerticalStackLayout Spacing="10" VerticalOptions="Center">
+        <Label FontAttributes="Bold" FontSize="16" Text="Please bring your qr code closer to your camera within the specified frame." TextColor="#5E5B67" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+        <Label x:Name="result" FontSize="20" Margin="10,10,10,0"/>
+        <AbsoluteLayout VerticalOptions="Center"> <Image Source="sample_capture.png" HeightRequest="290" WidthRequest="270"/>
+            <Image Source="red_outliner.png" HeightRequest="250" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" /> </AbsoluteLayout>
     </VerticalStackLayout>
+</Frame>
+
+    <Label Grid.Row="1" FontAttributes="Bold" FontSize="16" Text="Did you encounter a problem while scanning QR?" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+
+<StackLayout Grid.Row="2" VerticalOptions="End" HorizontalOptions="Center">
+    <HorizontalStackLayout>
+        <Label FontAttributes="Bold" FontSize="16" Text="Add your card manually" TextColor="#C31C4B" VerticalTextAlignment="Center" Margin="10,10,10,0" TextDecorations="Underline" HorizontalOptions="Center">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="ImageButton_ClickedAsync"/>
+            </Label.GestureRecognizers>
+        </Label>
+        <ImageButton Source="right_red_arrow.png" HeightRequest="30" WidthRequest="30" HorizontalOptions="Center" Clicked="ImageButton_ClickedAsync">
+            <ImageButton.GestureRecognizers>
+                <TapGestureRecognizer Tapped="ImageButton_ClickedAsync"/>
+            </ImageButton.GestureRecognizers>
+        </ImageButton>
+    </HorizontalStackLayout>
+</StackLayout>
+</Grid>
+
 </ContentPage>

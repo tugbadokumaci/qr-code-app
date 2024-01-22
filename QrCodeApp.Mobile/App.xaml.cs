@@ -20,6 +20,7 @@ public partial class App : Application
         //MainPage = new NavigationPage(new LoginView(new LoginViewModel()));
         //MainPage = new NavigationPage(new DetailCardView(new DetailCardViewModel()));
         //MainPage = new NavigationPage(new ShowQRCodeView(new ShowQRCodeViewModel()));
+        //MainPage = new NavigationPage(new AddCardView(new AddCardViewModel()));
         //MainPage = new AppShell();
     }
 }

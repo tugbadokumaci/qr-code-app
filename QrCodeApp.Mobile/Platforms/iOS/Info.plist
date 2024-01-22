@@ -28,5 +28,9 @@
 	</array>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/appicon.appiconset</string>
+	<key>NSCameraUsageDescription</key>
+	<string>This app uses the microphone to record videos without audio</string>
+	<key>CFBundleIdentifier</key>
+	<string>Tugba-Dokumaci.QRCodeApp</string>
 </dict>
 </plist>

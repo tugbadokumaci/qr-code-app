@@ -1,6 +1,5 @@
 ﻿namespace QrCodeApp.Mobile.Views;
 
-using AndroidX.Lifecycle;
 using Microsoft.Maui.Controls;
 using QrCodeApp.Mobile.ViewModels;
 

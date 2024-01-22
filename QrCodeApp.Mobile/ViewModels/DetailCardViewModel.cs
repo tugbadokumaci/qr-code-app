@@ -1,16 +1,13 @@
-﻿using System;
-using CommunityToolkit.Maui.Core;
+﻿using CommunityToolkit.Maui.Core;
 using System.Net.Http.Headers;
 using System.Text.Json;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Newtonsoft.Json;
-using static Android.Graphics.ColorSpace;
 using QrCodeApp.Shared.Models;
 using System.Text;
-using System.Threading.Tasks;
 using QrCodeApp.Mobile.Views;
 using System.ComponentModel;
+using Newtonsoft.Json;
 
 namespace QrCodeApp.Mobile.ViewModels;
 
@@ -94,13 +91,13 @@ public partial class DetailCardViewModel : ObservableObject, INotifyPropertyChan
     {
         string message = string.Empty;
 
-        Model.DisplayName = _displayName;
-        Model.JobTitle = _jobTitle;
-        Model.Phone = _phone;
-        Model.Mail = _mail;
-        Model.WebsiteUrl = _websiteUrl;
-        Model.Address = _address;
-        Model.CreatedDate = _createdDate;
+        Model.DisplayName = DisplayName;
+        Model.JobTitle = JobTitle;
+        Model.Phone = Phone;
+        Model.Mail = Mail;
+        Model.WebsiteUrl = WebsiteUrl;
+        Model.Address = Address;
+        Model.CreatedDate = CreatedDate;
         //Model.CreatedDate = DateTime.Parse(_date.ToShortDateString() + " " + _time.ToString());
 
 
@@ -150,7 +147,7 @@ public partial class DetailCardViewModel : ObservableObject, INotifyPropertyChan
         string message = string.Empty;
 
         Model.IsActive = false;
-        Model.UpdatedDate = DateTime.Parse(_createdDate.ToString());
+        Model.UpdatedDate = DateTime.Parse(CreatedDate.ToString());
 
 
 

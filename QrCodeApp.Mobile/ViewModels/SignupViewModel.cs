@@ -33,10 +33,10 @@ namespace QrCodeApp.Mobile.ViewModels
 
             UserModel model = new()
             {
-                UserName = _userName,
-                UserSurname = _userSurname,
-                Email = _email,
-                PasswordHash = _passwordHash,
+                UserName = UserName,
+                UserSurname = UserSurname,
+                Email = Email,
+                PasswordHash = PasswordHash,
             };
 
             try

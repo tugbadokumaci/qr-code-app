@@ -3,8 +3,13 @@
        xmlns:local="clr-namespace:QrCodeApp.Mobile.Views"
        x:Class="QrCodeApp.Mobile.AppShell"
        Shell.FlyoutBehavior="Disabled"
-       FlyoutBackgroundColor="red"
-       BackgroundColor="#1f456e">
+        Shell.NavBarIsVisible="True"
+        Shell.TabBarIsVisible="true"
+        Shell.TabBarForegroundColor="#C31C4B"    
+       Shell.TabBarTitleColor="Black"
+        Shell.TitleColor="#322F40"
+
+       >
 
     <!--<Shell.Behaviors>
              <mct: StatusBarBehavior StatusBarColor="{StaticResource DarkBack}" StatusBarStyle="LightContent" />
@@ -12,63 +17,52 @@
 
     </Shell.Behaviors>-->
 
-       <!--<Shell.Resources>
-    <Style x:Key="BaseStyle" 
-           TargetType="Element">
-        <Setter Property="Shell.ShellBackgroundColor" 
-                Value="#455A64" />
-        <Setter Property="Shell.ShellForegroundColor" 
-                Value="White" />
-        <Setter Property="Shell.ShellTitleColor" 
-                Value="Red" />
-        <Setter Property="Shell.ShellDisabledColor" 
-                Value="#B4FFFFFF" />
-        <Setter Property="Shell.ShellUnselectedColor" 
-                Value="#95FFFFFF" />
-    </Style>
-
-</Shell.Resources>-->
+            <TabBar >
+                <Tab Title="Home" Icon="home.png">
+                    <ShellContent ContentTemplate="{DataTemplate local:HomeView}" Shell.NavBarIsVisible="False"/>
+                </Tab>
+                <Tab Title="Scan" Icon="scan.png">
+                    <ShellContent ContentTemplate="{DataTemplate local:ScanView}" Shell.NavBarIsVisible="False"/>
+                </Tab>
+                <Tab Title="Saved" Icon="saved.png">
+                    <ShellContent ContentTemplate="{DataTemplate local:SavedView}" Shell.NavBarIsVisible="False"/>
+                </Tab>
+            </TabBar>
 
 
-    <TabBar >
+    <!--<TabBar >
 
         <Tab>
 
             <ShellContent Title="Home"
-
-                          Shell.TitleColor = "Purple"
-                          Shell.TabBarDisabledColor="IndianRed"
-                          Shell.TabBarBackgroundColor="Aqua"
-                          Shell.TabBarTitleColor="black"
-                          Shell.TabBarUnselectedColor="DarkCyan"
-                          Shell.TabBarForegroundColor="Gold"
+                          Shell.NavBarIsVisible="False"
                           ContentTemplate="{DataTemplate local:HomeView}"
-
-                          Route="HomeView"  >
+                          Shell.TabBarUnselectedColor="Green" >>
                 <ShellContent.Icon>
-                    <FileImageSource File="dotnet_bot.svg" />
+                    <FileImageSource File="home.svg" />
                 </ShellContent.Icon>
             </ShellContent>
         </Tab>
         <Tab>
-            <ShellContent Title="Scan"
-                          ContentTemplate="{DataTemplate local:ScanView}"
-                          Route="ScanView" Shell.TabBarTitleColor="#353f7b" Shell.TabBarUnselectedColor="Green" >
-                <ShellContent.Icon>
-                    <FileImageSource File="dotnet_bot.svg" />
-                </ShellContent.Icon>
-            </ShellContent>
-        </Tab>
+    <ShellContent Title="Scan"
+                  Shell.NavBarIsVisible="False"
+                  ContentTemplate="{DataTemplate local:ScanView}">
+        <ShellContent.Icon>
+            <FileImageSource File="scan.svg" />
+        </ShellContent.Icon>
+    </ShellContent>
+</Tab>
         <Tab>
             <ShellContent Title="Saved"
+                          Shell.NavBarIsVisible="False"
                           ContentTemplate="{DataTemplate local:SavedView}"
-                          Route="SavedView" Shell.TabBarTitleColor="#353f7b" Shell.TabBarUnselectedColor="Green" >
+                          Shell.TabBarUnselectedColor="Green" >
                 <ShellContent.Icon>
-                    <FileImageSource File="dotnet_bot.svg" />
+                    <FileImageSource File="saved.svg" />
                 </ShellContent.Icon>
             </ShellContent>
         </Tab>
 
-    </TabBar>
+    </TabBar>-->
 
 </Shell>

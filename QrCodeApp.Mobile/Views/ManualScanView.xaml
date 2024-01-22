@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:QrCodeApp.Mobile.ViewModels"
+             x:DataType="viewmodels:ManualScanViewModel"
+             x:Class="QrCodeApp.Mobile.Views.ManualScanView"
+            xmlns:viewmodel="clr-namespace:QrCodeApp.Mobile.ViewModels"
+             Title="ManualScanView">
+
+       <VerticalStackLayout Padding="20" HorizontalOptions="Center" VerticalOptions="Center">
+            <Frame BackgroundColor="White" CornerRadius="10" Margin="20" BorderColor="White">
+                <VerticalStackLayout>
+                        <Label Text="Enter CardID" TextColor="#5E5B67" FontSize="15"/>
+                        <Entry x:Name="cardId"
+                               Placeholder="Ex. #117"
+                               Keyboard="Numeric"
+                               VerticalOptions="CenterAndExpand"
+                               Text="{Binding CardId}" />
+
+                        <Button Command="{Binding Path=ScanCardManuallyCommand, Source={RelativeSource AncestorType={x:Type viewmodels:ManualScanViewModel}}}" CommandParameter="{Binding CardId}"
+                                Text="Save Card Manually"
+                                VerticalOptions="CenterAndExpand" />
+
+                </VerticalStackLayout>
+
+            </Frame>
+
+       </VerticalStackLayout>
+</ContentPage>

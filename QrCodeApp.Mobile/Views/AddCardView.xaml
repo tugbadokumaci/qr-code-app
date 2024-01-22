@@ -3,11 +3,50 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="QrCodeApp.Mobile.Views.AddCardView"
               xmlns:viewmodel="clr-namespace:QrCodeApp.Mobile.ViewModels"
-             Title="AddCardView">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+            BackgroundColor="#EFF0F4"
+            Title="AddCardView">
+
+
+        <ScrollView>
+            <VerticalStackLayout>
+
+                <!--<Grid Margin="0,10,0,10" ColumnDefinitions="Auto, *">
+                    <StackLayout Grid.Column="0" Orientation="Horizontal">
+                        <ImageButton Source="back.png" WidthRequest="35" HeightRequest="35" Clicked="ImageButton_Clicked" VerticalOptions="Center"/>
+                    </StackLayout>
+
+                    <StackLayout Grid.Column="1">
+                        <Label Text="Add Card" HorizontalOptions="Center" TextColor="#322F40" FontSize="25" Margin="0,20,0,20" FontAttributes="Bold"/>
+                    </StackLayout>
+                </Grid>-->
+
+                <!-- Card Details Entry Fields -->
+                <Frame BackgroundColor="White" CornerRadius="10" Margin="20" BorderColor="White">
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="Display Name" TextColor="#5E5B67" FontSize="15"/>
+                        <Entry Text="{Binding DisplayName}" TextColor="Black" FontAttributes="Bold" FontSize="20"/>
+
+                        <Label Text="Job Title" TextColor="#5E5B67" FontSize="15"/>
+                        <Entry Text="{Binding JobTitle}" TextColor="Black" FontAttributes="Bold" FontSize="20"/>
+
+                        <Label Text="Phone" TextColor="#5E5B67" FontSize="15"/>
+                        <Entry Text="{Binding Phone}" TextColor="Black" FontAttributes="Bold" FontSize="20"/>
+
+                        <Label Text="Mail" TextColor="#5E5B67" FontSize="15"/>
+                        <Entry Text="{Binding Mail}" TextColor="Black" FontAttributes="Bold" FontSize="20"/>
+
+                        <Label Text="Website Url" TextColor="#5E5B67" FontSize="15"/>
+                        <Entry Text="{Binding WebsiteUrl}" TextColor="Black" FontAttributes="Bold" FontSize="20"/>
+
+                        <Label Text="Address" TextColor="#5E5B67" FontSize="15"/>
+                        <Entry Text="{Binding Address}" TextColor="Black" FontAttributes="Bold" FontSize="20"/>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Save Button -->
+                <Button Text="Save" TextColor="Black" BackgroundColor="White" CornerRadius="10"  FontAttributes="Bold" Command="{Binding SaveCommand}" Margin="20"/>
+
+
+            </VerticalStackLayout>
+        </ScrollView>
 </ContentPage>

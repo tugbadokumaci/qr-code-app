@@ -12,7 +12,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 
 		<!-- Display name -->
-		<ApplicationTitle>QrCodeApp.Mobile</ApplicationTitle>
+		<ApplicationTitle>Argus Business Card</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>com.companyname.qrcodeapp.mobile</ApplicationId>
@@ -32,6 +32,21 @@
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
 	  <CreatePackage>false</CreatePackage>
+	  <MtouchLink>SdkOnly</MtouchLink>
+	  <CodesignKey>Apple Development: tdokumaci@icloud.com (T5HA63X8P9)</CodesignKey>
+	  <CodesignProvision>Automatic</CodesignProvision>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-ios|AnyCPU'">
+	  <CreatePackage>false</CreatePackage>
+	  <CodesignKey>iPhone Developer</CodesignKey>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-maccatalyst|AnyCPU'">
+	  <CreatePackage>false</CreatePackage>
+	  <CodesignKey>Mac Developer</CodesignKey>
+	  <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	  <WarningLevel>4</WarningLevel>
 	</PropertyGroup>
 	<ItemGroup>
 		<!-- App Icon -->
@@ -77,6 +92,19 @@
 	  <None Remove="Resources\Images\OCR.png" />
 	  <None Remove="Resources\Images\tabler_arrow-up.png" />
 	  <None Remove="Resources\Images\add.png" />
+	  <None Remove="Resources\Fonts\Inter-Black.ttf" />
+	  <None Remove="Resources\Fonts\Inter-Bold.ttf" />
+	  <None Remove="Resources\Fonts\Inter-ExtraBold.ttf" />
+	  <None Remove="Resources\Fonts\Inter-ExtraLight.ttf" />
+	  <None Remove="Resources\Fonts\Inter-Light.ttf" />
+	  <None Remove="Resources\Fonts\Inter-Medium.ttf" />
+	  <None Remove="Resources\Fonts\Inter-Regular.ttf" />
+	  <None Remove="Resources\Fonts\Inter-SemiBold.ttf" />
+	  <None Remove="Resources\Fonts\Inter-Thin.ttf" />
+	  <None Remove="Resources\Images\qr_preview.png" />
+	  <None Remove="Resources\Images\red_outliner.png" />
+	  <None Remove="Resources\Images\sample_capture.png" />
+	  <None Remove="Resources\Images\Ok.png" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Services\" />
@@ -100,5 +128,18 @@
 	  <BundleResource Include="Resources\Images\scan.png" />
 	  <BundleResource Include="Resources\Images\right_red_arrow.png" />
 	  <BundleResource Include="Resources\Images\add.png" />
+	  <BundleResource Include="Resources\Fonts\Inter-Black.ttf" />
+	  <BundleResource Include="Resources\Fonts\Inter-Bold.ttf" />
+	  <BundleResource Include="Resources\Fonts\Inter-ExtraBold.ttf" />
+	  <BundleResource Include="Resources\Fonts\Inter-ExtraLight.ttf" />
+	  <BundleResource Include="Resources\Fonts\Inter-Light.ttf" />
+	  <BundleResource Include="Resources\Fonts\Inter-Medium.ttf" />
+	  <BundleResource Include="Resources\Fonts\Inter-Regular.ttf" />
+	  <BundleResource Include="Resources\Fonts\Inter-SemiBold.ttf" />
+	  <BundleResource Include="Resources\Fonts\Inter-Thin.ttf" />
+	  <BundleResource Include="Resources\Images\qr_preview.png" />
+	  <BundleResource Include="Resources\Images\red_outliner.png" />
+	  <BundleResource Include="Resources\Images\sample_capture.png" />
+	  <BundleResource Include="Resources\Images\ok.png" />
 	</ItemGroup>
 </Project>

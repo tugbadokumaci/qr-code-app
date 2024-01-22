@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QrCodeApp.Mobile.Views.ReadyToScanView">
+    <VerticalStackLayout>
+        <Frame BackgroundColor="#EFF0F4" BorderColor="#EFF0F4" WidthRequest="340" HeightRequest="140" CornerRadius="22" >
+            <VerticalStackLayout Margin="0,-10,0,0" Spacing="10" VerticalOptions="Center">
+                    <Label FontAttributes="Bold" FontSize="24" Text="Scan QR Code" TextColor="#322F40"/>
+                    <Label FontAttributes="Bold" FontSize="16" Text="You can save that card by scanning the QR code of a card and access it later." TextColor="#92919E"/>
+            </VerticalStackLayout>
+        </Frame>
+
+        <StackLayout>
+            <Image Source="qr_preview.png" HeightRequest="250" />
+            <Image Source="red_outliner.png" HeightRequest="150"/>
+        </StackLayout>
+
+        <Button Text="Delete" TextColor="#322F40" BackgroundColor="#F2F2F7" CornerRadius="10" FontAttributes="Bold" Clicked="GoButton_Clicked"/>
+        
+    </VerticalStackLayout>
+</ContentView>
+

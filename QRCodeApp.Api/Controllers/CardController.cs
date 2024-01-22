@@ -131,5 +131,68 @@ namespace QrCodeApp.Api.Controllers
                 return BadRequest($"Error: {ex.Message}");
             }
         }
+
+        [HttpPost("SaveCard")]
+        public IActionResult SaveCard( [FromBody] SavedModel model)
+        {
+
+            var cardExists = _dbContext.Cards.Any(c => c.Id == model.CardId);
+            if (!cardExists)
+            {
+                return BadRequest("Card not found.");
+            }
+
+            try
+            {
+                var savedCard = new SavedModel { UserId = model.UserId, CardId = model.CardId };
+                _dbContext.SavedCards.Add(savedCard);
+                _dbContext.SaveChanges();
+                return Ok(savedCard);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Error: {ex.Message}");
+            }
+        }
+
+        //[HttpPost("SaveCard")]
+        //public IActionResult SaveCard(string userId, int cardId)
+        //{
+
+        //    var cardExists = _dbContext.Cards.Any(c => c.Id == cardId);
+        //    if (!cardExists)
+        //    {
+        //        return BadRequest("Card not found.");
+        //    }
+
+        //    try
+        //    {
+        //        var savedCard = new SavedModel { UserId = userId, CardId = cardId };
+        //        _dbContext.SavedCards.Add(savedCard);
+        //        _dbContext.SaveChanges();
+        //        return Ok(savedCard);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest($"Error: {ex.Message}");
+        //    }
+        //}
+
+        [HttpGet("GetSavedCards/{userId}")]
+        public IActionResult GetSavedCards(string userId)
+        {
+            try
+            {
+                var savedCards = _dbContext.SavedCards
+                    .Where(s => s.UserId == userId)
+                    .ToList();
+
+                return Ok(savedCards);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Error: {ex.Message}");
+            }
+        }
     }
 }

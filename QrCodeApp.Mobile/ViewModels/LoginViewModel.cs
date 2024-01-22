@@ -1,13 +1,6 @@
-﻿using System;
-using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
-using System.Net.Http.Headers;
-using System.Text.Json;
-using System.Threading.Tasks;
+﻿using CommunityToolkit.Mvvm.Input;
 using QrCodeApp.Mobile.ViewModels.Common;
 using Newtonsoft.Json;
-using static Android.Graphics.ColorSpace;
-using Xamarin.KotlinX.Coroutines.Scheduling;
 using QrCodeApp.Shared.Models;
 using QrCodeApp.Mobile.Views;
 

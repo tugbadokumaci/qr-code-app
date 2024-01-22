@@ -4,9 +4,9 @@ namespace QrCodeApp.Mobile;
 
 public partial class AppShell : Shell
 {
-	public AppShell()
-	{
-		InitializeComponent();
+    public AppShell()
+    {
+        InitializeComponent();
         Routing.RegisterRoute(nameof(HomeView), typeof(HomeView));
         Routing.RegisterRoute(nameof(DetailCardView), typeof(DetailCardView));
         Routing.RegisterRoute(nameof(LoginView), typeof(LoginView));
@@ -16,5 +16,7 @@ public partial class AppShell : Shell
         Routing.RegisterRoute(nameof(ScanView), typeof(ScanView));
 
     }
+
+
 }
 

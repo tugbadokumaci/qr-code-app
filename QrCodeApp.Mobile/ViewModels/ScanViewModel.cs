@@ -1,11 +1,12 @@
 ﻿using System;
-namespace QrCodeApp.Mobile.ViewModels
+using CommunityToolkit.Mvvm.ComponentModel;
+
+namespace QrCodeApp.Mobile.ViewModels;
+
+public partial class ScanViewModel : ObservableObject
 {
-	public class ScanViewModel
+	public ScanViewModel()
 	{
-		public ScanViewModel()
-		{
-		}
 	}
 }
 

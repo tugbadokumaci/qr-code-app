@@ -6,7 +6,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <Style x:Key="CustomButtonStyle" TargetType="Button">
-                <Setter Property="BackgroundColor" Value="#F2F2F7" />
+                <Setter Property="BackgroundColor" Value="yellow" />
                 <Setter Property="CornerRadius" Value="10" />
                 <Setter Property="TextColor" Value="#000000" />
             </Style>
@@ -14,6 +14,7 @@
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

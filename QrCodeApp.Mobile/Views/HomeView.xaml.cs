@@ -14,4 +14,20 @@ public partial class HomeView : ContentPage
 		BindingContext = _viewModel;
 
 	}
+
+    private async void ImageButton_Clicked(object sender, EventArgs e)
+    {
+        try
+        {
+            // Navigate to the HomePage route
+            await Shell.Current.GoToAsync(nameof(AddCardView));
+        }
+        catch (InvalidOperationException)
+        {
+            // Handle navigation failure gracefully
+            await DisplayAlert("Error", "Failed to navigate to HomePage.", "OK");
+        }
+    }
+
+
 }
